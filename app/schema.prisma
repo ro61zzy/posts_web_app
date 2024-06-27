@@ -28,3 +28,6 @@ model User {
   posts         Post[]
   @@map(name: "users")
 }
+
+
+//npx prisma studio --schema app/schema.prisma to view
