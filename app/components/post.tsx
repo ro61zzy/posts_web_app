@@ -1,4 +1,5 @@
 import React from 'react';
+import DeletePostButton from './DeletePostButton';
 
 // Define the props interface
 interface PostProps {
@@ -15,6 +16,7 @@ const Post: React.FC<PostProps> = ({ id, title, content, authorName }) => {
       <h3>{authorName}</h3>
       <h4>{title}</h4>
       <p>{content}</p>
+      <DeletePostButton postId={id} />
     </div>
   );
 };
