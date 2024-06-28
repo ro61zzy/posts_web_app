@@ -2,6 +2,7 @@ import React from 'react';
 import styles from "./page.module.css";
 import prisma from '../lib/prisma'; // instance will be your interface to the database when you want to read and write data in it
 import Post from './components/post';
+import Link from 'next/link';
 
 // Define the types for the data
 interface Post {
@@ -35,10 +36,11 @@ async function getPosts(): Promise<PostWithAuthor[]> {
 
 export default async function Home() {
   const posts = await getPosts();
-  console.log({ posts });
+  // console.log({ posts });
   
   return (
     <main className={styles.main}>
+      <Link href={'/add-post'}>Add Posts</Link>
       <h1>Feed</h1>
       {posts.map((post) => (
         <Post
